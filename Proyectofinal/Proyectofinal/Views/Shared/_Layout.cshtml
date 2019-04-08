@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" type="text/css" href="~/Content/estilo.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Mantenimientos
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Empleado", "index", "Empleado")</li>
+                            <li>@Html.ActionLink("cargo", "Index", "cargo")</li>
+                            <li>@Html.ActionLink("departamento", "Index", "departamento")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Procesos
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Nomina", "Index", "Nominas")</li>
+                            <li>@Html.ActionLink("permiso", "Index", "permisos")</li>
+                            <li>@Html.ActionLink("Licencias", "Index", "Licencias")</li>
+                            <li>@Html.ActionLink("salida", "index", "salidas")</li>
+                            <li>@Html.ActionLink("vacaciones", "Index", "vacaciones")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Informes
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("activo", "index", "activos")</li>
+                            <li>@Html.ActionLink("inactivo", "Index", "inactivos")</li>
+                            <li>@Html.ActionLink("Cargo", "Index", "CargoInfo")</li>
+                            <li>@Html.ActionLink("Departamento", "Index", "Departamentoinfo")</li>
+                            <li>@Html.ActionLink("Nomina", "Index", "Nominas")</li>
+                            <li>@Html.ActionLink("permiso", "Index", "permisoinfo")</li>
+                            <li>@Html.ActionLink("Salida", "Index", "SalidaInfo")</li>
+                            <li>@Html.ActionLink("Entrada", "Index", "EntradaInfo")</li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @*<div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Emp", "index", "Empleado")</li>
+                <li>@Html.ActionLink("cargo", "Index", "cargo")</li>
+                <li>@Html.ActionLink("depart", "Index", "departamento")</li>
+                <li>@Html.ActionLink("inactivo", "Index", "inactivos")</li>
+                <li>@Html.ActionLink("activo", "index", "activos")</li>
+                <li>@Html.ActionLink("depart", "Index", "departamento")</li>
+                <li>@Html.ActionLink("permiso", "Index", "permisos")</li>
+                <li>@Html.ActionLink("salida", "index", "salidas")</li>
+                <li>@Html.ActionLink("vacaciones", "Index", "vacaciones")</li>
+                <li>@Html.ActionLink("Nomina", "Index", "Nominas")</li>
+            </ul>
+        </div>*@
+    </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
